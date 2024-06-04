@@ -1,0 +1,22 @@
+#python program to create a rock-paper-scissor game
+import random
+a=["ROCK","PAPER","SCISSOR"]
+def game():
+    S=True
+    s=a[random.randint(0,2)]
+    
+    while S==True:
+        n=input("Choose among ('Rock','Scissor','Paper')").upper()
+        print(n,s)
+        if tuple([n,s]) in [("ROCK","SCISSOR"),("SCISSOR","PAPER"),("PAPER","ROCK")]:
+            print("You Won")
+        elif n==s:
+            print("Tie")
+        else:
+            print("You Lose")
+        d=input("Want to play more(y/n)").upper()
+        if d=='Y':
+            S=game()
+        else:
+            print("Thanks for Playing")
+            S=False
